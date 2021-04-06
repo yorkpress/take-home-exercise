@@ -4,7 +4,6 @@ const resources = require('./resources');
 
 const {
   PORT = 3000,
-  SERVER_TIMEOUT = 65000,
 } = process.env
 
 const run = async () => {
@@ -23,15 +22,26 @@ const run = async () => {
     res.json({students})
   });
 
+
+  /**
+   * POST body to save an assignment
+   * The body should look like this
+   * {
+   *   "name": "My First Assignment",
+   *   "date": "1617719851333", - This is a unix time stamp. You can use `new Date().getTime()` to get this
+   *   "resources": [2,3],
+   *   "students": ["5bd9e9fbecef8d003e003001", "5bd9e9fbecef8d003e003003"]
+   * }
+   */
   router.post('/assignment', (req, res) => {
     const messages = [];
 
-    if (req.body.name) messages.push("Please add an assignment name")
-    if (req.body.date) messages.push("Please add an assignment due date")
-    if (req.body.resources) messages.push("Please add a least 1 resource for the assignment")
-    if (req.body.students) message.push("Please provide some students that ")
+    if (!req.body.name) messages.push("Please add an assignment name")
+    if (!req.body.date) messages.push("Please add an assignment due date")
+    if (!req.body.resources) messages.push("Please add a least 1 resource for the assignment")
+    if (!req.body.students) messages.push("Please provide a list of students assigned to the task")
 
-    if (messages) return res.status(400).json({messages});
+    if (messages.length > 0) return res.status(400).json({messages});
     return res.status(201).json({message: "Accepted assignment response successfully"});
   })
 
@@ -41,10 +51,6 @@ const run = async () => {
     const { address, port } = server.address()
     console.log(`Listening: http://${address}:${port}`)
   })
-
-  server.timeout = parseInt(SERVER_TIMEOUT)
-  server.keepAliveTimeout = 65000
-  server.headersTimeout = 66000
 }
 
 run().then(() => {
