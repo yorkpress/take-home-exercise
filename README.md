@@ -10,10 +10,15 @@ DOCS:       nice to have, but not mandatory
 
 ## The brief
 
-Do the thing
-Submit a PR
+You have been charged with creating an app for teachers to create homework. The teacher needs to assign the homework to the students and particular resources for their study.
 
-The styling doesn't have to be spot on. But we do want to see how good you are at styling your own applications. Feel free to use styling libraries etc for quickness, but we **recommend** you do your own styling as the projects you will be working on is all custom styling.
+In this take home exercise, you will use the following skills
+* Calling API's and parsing responses
+* CSS Styling
+* Stateful application design
+* Building an application according to acceptance criteria
+
+The styling doesn't have to be spot on. But, we do want to see how good you are at styling your own applications. Feel free to use styling libraries (tailwind, bootstrap, etc) for quickness, but we **recommend** you do your own styling as the projects you will be working on is all custom styling.
 
 ## User stories
 Please make sure your application fulfills the following acceptance criteria.
@@ -107,7 +112,7 @@ Then I see a "Assign" button
 
 Given I have selected the homework to assign
 When I clicked "Assign" button
-Then I am taken back to the classroom page 
+Then I am taken back to the classroom page
 AND I see the current homework assigned below the classroom name
 ```
 
@@ -140,4 +145,21 @@ Then I am taken back to the student page
 AND I see the current book assigned below their name
 ```
 ## Setup
-`npm i`
+
+The API is available under the `/backend` folder. It is an express server that returns some static data.
+- To get the list of students you can request `http://localhost:3000/students`
+- To get the list of resources you can request `http://localhost:3000/resources`
+
+To run the server run the following commands
+```bash
+cd backend
+npm install
+npm start
+```
+
+In a new terminal, start the frontend by running the following:
+```bash
+cd frontend
+npm install
+npm start
+```
