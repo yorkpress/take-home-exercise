@@ -14,7 +14,7 @@ The purpose of this is **not** to be a test with a pass or fail. It is simple me
 
 ## The Brief
 
-You have been charged with creating an app for teachers to create homework. The teacher needs to assign the homework to the students and particular resources for their study. Please make sure your application fulfills the criteria found [here](acceptance-criteria.md). Please style the application according to the images found under the acceptance criteria. Feel free to use styling libraries (tailwind, bootstrap, etc) for quickness, but we **recommend** you do your own styling as the projects you will be working on is all custom styling.
+You have been charged with creating an app for teachers to create homework. The teacher needs to assign the homework to the students and particular resources for their study. Please make sure your application fulfills the criteria found [here](acceptance-criteria.md). Please style the application according to the images found under the acceptance criteria. Not all pages have designs, so just use the images in there for the look and feel. Feel free to use styling libraries (tailwind, bootstrap, etc) for quickness, but we **recommend** you do your own styling as the projects you will be working on is all custom styling.
 
 If you have time, feel free to write tests (using jest or react-testing-library) to ensure your application is correct.
 
