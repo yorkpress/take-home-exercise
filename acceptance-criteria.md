@@ -1,66 +1,3 @@
-## Create homework
-```
-As a teacher
-I want to be able to create a piece of homework
-So I can assess my students
-
-Given I am on the dashboard page
-When I click on "Create homework"
-Then I am taken to the Create Homework page
-
-Given I am on the Create Homework page
-When I look at the page
-Then I see an input field for the title of the homework
-AND an "Add Questions & Answers" area below
-
-Given I am on the Create Homework page
-When I look at the "Add Questions & Answers" area
-Then I see an input field for the question with some placeholder text: "Enter question text"
-AND a dropdown for question types
-AND a disabled "Confirm" button at the bottom of the page
-
-Given I am creating a question
-When I click on the question type dropdown
-Then I see "Multiple Choice" as an option
-
-Given I am creating a question
-When I select Multiple Choice as the option in the question type dropdown
-Then I see 2 text input fields appear below
-AND 2 "Correct" checkboxes next to each input field
-AND an "Add answer" button below the input fields
-
-Given I am creating a Multiple Choice question
-When I look at the input fields
-Then I see placeholder text "Enter answer text"
-
-Given I am creating a Multiple Choice question
-When I click on the "Add answer" button
-Then a new row of 1 input and one "Correct?" checkbox is created
-
-Given I have not entered any text in any of the answer inputs
-When I look at the Confirm button
-Then I see it is disabled
-
-Given I have entered text in all answer inputs but haven't checked any "Correct?" checkboxes
-When I look at the Confirm button
-Then I see it is disabled
-
-Given I have entered text in all answer inputs but have checked all "Correct?" checkboxes
-When I look at the Confirm button
-Then I see it is disabled
-
-Given I have entered text in all answer inputs and have checked at least 1 "Correct?" checkbox
-When I look at the Confirm button
-Then I see it is Enabled
-
-Given I have entered all relevant info
-When I click on the Confirm button
-Then the homework is created
-AND I am taken back to the dashboard page
-```
-
-![image](https://user-images.githubusercontent.com/5136808/113701843-94dff000-96d0-11eb-8dde-0cb1772859a9.png)
-
 ## Assign homework to classroom
 ```
 As a teacher
@@ -119,3 +56,7 @@ When I click the "Assign" button
 Then I am taken back to the student page
 AND I see the current book assigned below their name
 ```
+
+### Look and feel
+![image](https://user-images.githubusercontent.com/5136808/113701843-94dff000-96d0-11eb-8dde-0cb1772859a9.png)
+
