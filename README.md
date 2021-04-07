@@ -1,4 +1,4 @@
-# take-home-exercise
+# York Press Tech Take Home Test
 
 ```
 TIMEBOX:    3 hours max
