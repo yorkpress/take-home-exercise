@@ -22,7 +22,7 @@ export const Book = (props) => {
       </Button>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Modal heading</Modal.Title>
+          <Modal.Title>Books</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <div class="p-5 mb-4 bg-light rounded-3">

@@ -42,8 +42,8 @@ const run = async () => {
   });
 
   router.get('/books', (req, res) => {
-    books = books.filter((homework) => {
-      return books.available;
+    books = books.filter((book) => {
+      return book.available;
     });
     res.json({ books });
   });

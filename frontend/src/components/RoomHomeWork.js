@@ -39,18 +39,16 @@ class RoomHomeWork extends Component {
           students={this.state.students}
           callbackfn={(student) => (
             <tr key={student.id}>
-              {/*<a href={'students/' + student.id}>*/}
               <td>
                 <Link
                   to={{
-                    pathname: `/students/${student.id}`,
+                    pathname: `/student/${student.id}`,
                     state: { student },
                   }}
                 >
                   {student.firstname + ' ' + student.lastname}
                 </Link>
               </td>
-              {/*</a>*/}
               <td>{student.email}</td>
               <td>{student.grade}</td>
               <td>{student.schoolId}</td>
