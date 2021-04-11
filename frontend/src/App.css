@@ -11,6 +11,9 @@
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
+  .container {
+    min-width: 1900px;
+  }
 }
 
 .App-header {
