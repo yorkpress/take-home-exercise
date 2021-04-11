@@ -48,7 +48,9 @@ class Students extends Component {
               <tbody>
                 {this.state.students.map((student) => (
                   <tr key={student.id}>
-                    <td>{student.firstname + ' ' + student.lastname}</td>
+                    <a href={'students/' + student.id}>
+                      <td>{student.firstname + ' ' + student.lastname}</td>
+                    </a>
                     <td>{student.email}</td>
                     <td>{student.grade}</td>
                     <td>{student.schoolId}</td>
