@@ -1,6 +1,8 @@
 const express = require('express');
+const cors = require('cors');
 const students = require('./students');
 const resources = require('./resources');
+let homeworks = require('./homeworks');
 
 const { PORT = 4000 } = process.env;
 
@@ -8,6 +10,9 @@ const run = async () => {
   const app = express();
   app.use(express.json());
   app.use('/public', express.static('resources'));
+  // enable cors
+  app.use(cors());
+  app.options('*', cors());
 
   /* Application */
   const router = express.Router();
@@ -17,6 +22,13 @@ const run = async () => {
 
   router.get('/students', (req, res) => {
     res.json({ students });
+  });
+
+  router.get('/homeworks', (req, res) => {
+    homeworks = homeworks.filter((homework) => {
+      return homework.available;
+    });
+    res.json({ homeworks });
   });
 
   /**
