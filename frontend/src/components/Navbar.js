@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import Room from './Room';
 
 const NavBar = () => {
   return (
@@ -23,9 +24,16 @@ const NavBar = () => {
           <NavLink className="nav-item nav-link" to="/">
             home
           </NavLink>
-          <NavLink className="nav-item nav-link" to="/students">
+          <NavLink
+            className="nav-item nav-link"
+            to="/students"
+            componenet={Room}
+          >
             Assign Homework
           </NavLink>
+          {/*<NavLink className="nav-item nav-link" to="/students" component={}>*/}
+          {/*  Class Room*/}
+          {/*</NavLink>*/}
         </div>
       </div>
     </nav>

@@ -1,8 +1,9 @@
-import React, { Component, useState } from 'react';
+import React, { Component } from 'react';
 import { getStudents } from '../services/studentService';
 import { HomeWork } from './HomeWork';
+import { Student } from './Student';
 
-class Students extends Component {
+class Room extends Component {
   state = {
     students: [],
     homework: null,
@@ -33,33 +34,19 @@ class Students extends Component {
         ) : (
           <p1>No homeworks specified for this room</p1>
         )}
-        <div class="p-5 mb-4 bg-light rounded-3">
-          <div class="container-fluid py-5">
-            <table className="table">
-              <thead>
-                <tr>
-                  <th>Name</th>
-                  <th>Email</th>
-                  <th>Grade</th>
-                  <th>School ID</th>
-                  <th />
-                </tr>
-              </thead>
-              <tbody>
-                {this.state.students.map((student) => (
-                  <tr key={student.id}>
-                    <a href={'students/' + student.id}>
-                      <td>{student.firstname + ' ' + student.lastname}</td>
-                    </a>
-                    <td>{student.email}</td>
-                    <td>{student.grade}</td>
-                    <td>{student.schoolId}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
+        <Student
+          students={this.state.students}
+          callbackfn={(student) => (
+            <tr key={student.id}>
+              <a href={'students/' + student.id}>
+                <td>{student.firstname + ' ' + student.lastname}</td>
+              </a>
+              <td>{student.email}</td>
+              <td>{student.grade}</td>
+              <td>{student.schoolId}</td>
+            </tr>
+          )}
+        />
         <HomeWork onAssign={this.handlerAssignedHomework} />
 
         <footer class="pt-3 mt-4 text-muted border-top">&copy; 2021</footer>
@@ -68,4 +55,4 @@ class Students extends Component {
   }
 }
 
-export default Students;
+export default Room;
