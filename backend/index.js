@@ -1,6 +1,7 @@
 const express = require('express');
 const students = require('./students');
 const resources = require('./resources');
+const cors = require('cors');
 
 const {
   PORT = 3000,
@@ -10,6 +11,7 @@ const run = async () => {
 
   const app = express()
   app.use(express.json())
+  app.use(cors({origin:'*'}));
   app.use('/public', express.static('resources'));
 
   /* Application */
@@ -19,7 +21,7 @@ const run = async () => {
   });
 
   router.get('/students', (req, res) => {
-    res.json({students})
+    res.json(students)
   });
 
 

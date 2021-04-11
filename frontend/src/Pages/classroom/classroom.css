@@ -1,0 +1,35 @@
+
+.classRoomMainWrapper {
+    position: relative;
+    height: 90vh;
+    min-height: 90vh;
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.classRoomHeaderWrapper{
+
+}
+
+.classRoomEnrollmentList{
+
+}
+
+.classRoomAssignButton{
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.AssignmentModalWrapper {
+    position: absolute;
+    top: 15vh;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.assignmentBotton{
+    height: 5%;
+    
+}
