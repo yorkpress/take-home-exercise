@@ -10,12 +10,11 @@ export const HomeWork = (props) => {
   const handleShow = () => setShow(true);
 
   useEffect(async () => {
-    // Update the document title using the browser API
     const { data } = await getHomeworks();
 
     const homeWorks = data.homeworks;
     setHomeWorks(homeWorks);
-  }, {});
+  }, []);
 
   return (
     <>
