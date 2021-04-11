@@ -4,7 +4,7 @@ import * as PropTypes from 'prop-types';
 export class Student extends Component {
   render() {
     return (
-      <div class="p-5 mb-4 bg-light rounded-3">
+      <div class="p-1 mb-1 bg-light rounded-3">
         <div class="container-fluid py-5">
           <table className="table">
             <thead>
