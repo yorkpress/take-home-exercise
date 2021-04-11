@@ -1,6 +1,7 @@
 import { Button, Modal } from 'react-bootstrap';
 import React, { useState, useEffect } from 'react';
 import { getHomeworks } from '../services/homeworkService';
+import { getStudents } from '../services/studentService';
 
 export const HomeWork = (props) => {
   const [show, setShow] = useState(false);
@@ -11,9 +12,10 @@ export const HomeWork = (props) => {
   useEffect(async () => {
     // Update the document title using the browser API
     const { data } = await getHomeworks();
+
     const homeWorks = data.homeworks;
     setHomeWorks(homeWorks);
-  });
+  }, {});
 
   return (
     <>

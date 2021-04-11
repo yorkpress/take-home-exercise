@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import { getStudents } from '../services/studentService';
 import { HomeWork } from './HomeWork';
 import { Student } from './Student';
+import { Link } from 'react-router-dom';
 
-class Room extends Component {
+class RoomHomeWork extends Component {
   state = {
     students: [],
     homework: null,
@@ -38,9 +39,18 @@ class Room extends Component {
           students={this.state.students}
           callbackfn={(student) => (
             <tr key={student.id}>
-              <a href={'students/' + student.id}>
-                <td>{student.firstname + ' ' + student.lastname}</td>
-              </a>
+              {/*<a href={'students/' + student.id}>*/}
+              <td>
+                <Link
+                  to={{
+                    pathname: `/students/${student.id}`,
+                    state: { student },
+                  }}
+                >
+                  {student.firstname + ' ' + student.lastname}
+                </Link>
+              </td>
+              {/*</a>*/}
               <td>{student.email}</td>
               <td>{student.grade}</td>
               <td>{student.schoolId}</td>
@@ -55,4 +65,4 @@ class Room extends Component {
   }
 }
 
-export default Room;
+export default RoomHomeWork;
