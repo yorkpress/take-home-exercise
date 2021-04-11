@@ -18,7 +18,7 @@ export const HomeWork = (props) => {
   return (
     <>
       <Button variant="primary" onClick={handleShow}>
-        Launch demo modal
+        Assign HomeWork
       </Button>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>

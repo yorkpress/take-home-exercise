@@ -3,6 +3,7 @@ const cors = require('cors');
 const students = require('./students');
 const resources = require('./resources');
 let homeworks = require('./homeworks');
+let books = require('./books');
 
 const { PORT = 4000 } = process.env;
 
@@ -38,6 +39,13 @@ const run = async () => {
       return homework.available;
     });
     res.json({ homeworks });
+  });
+
+  router.get('/books', (req, res) => {
+    books = books.filter((homework) => {
+      return books.available;
+    });
+    res.json({ books });
   });
 
   /**
