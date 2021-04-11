@@ -29,7 +29,7 @@ class Students extends Component {
         </header>
 
         {this.state.homework !== null ? (
-          this.state.homework
+          <h1>{this.state.homework}</h1>
         ) : (
           <p1>No homeworks specified for this room</p1>
         )}
