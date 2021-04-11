@@ -1,24 +1,24 @@
 import { Button, Modal } from 'react-bootstrap';
 import React, { useState, useEffect } from 'react';
-import { getHomeworks } from '../services/homeworkService';
+import { getBooks } from '../services/bookService';
 
-export const HomeWork = (props) => {
+export const Book = (props) => {
   const [show, setShow] = useState(false);
-  const [homeworks, setHomeWorks] = useState([]);
+  const [books, setBooks] = useState([]);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
   useEffect(async () => {
-    const { data } = await getHomeworks();
+    const { data } = await getBooks();
 
-    const homeWorks = data.homeworks;
-    setHomeWorks(homeWorks);
+    const homeWorks = data.books;
+    setBooks(homeWorks);
   }, []);
 
   return (
     <>
       <Button variant="primary" onClick={handleShow}>
-        Assign HomeWork
+        Assign Book
       </Button>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
@@ -36,13 +36,13 @@ export const HomeWork = (props) => {
                   </tr>
                 </thead>
                 <tbody>
-                  {homeworks.map((homework) => (
-                    <tr key={homework.id}>
-                      <td>{homework.name}</td>
+                  {books.map((book) => (
+                    <tr key={book.id}>
+                      <td>{book.name}</td>
                       <button
                         value="Assign"
                         className="btn btn-danger btn-sm"
-                        onClick={() => props.onAssign(homework.name)}
+                        onClick={() => props.onAssign(book.name)}
                       >
                         Assign
                       </button>
