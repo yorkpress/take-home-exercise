@@ -24,6 +24,15 @@ const run = async () => {
     res.json({ students });
   });
 
+  router.get('/students/:id', (req, res) => {
+    const params = req.params;
+    const student = students.find((student) => student.id === params.id);
+    if (!student) {
+      res.json('No User with that id');
+    }
+    res.json({ student });
+  });
+
   router.get('/homeworks', (req, res) => {
     homeworks = homeworks.filter((homework) => {
       return homework.available;
