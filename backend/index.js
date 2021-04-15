@@ -9,17 +9,22 @@ const {
 const run = async () => {
 
   const app = express()
-  app.use(express.json())
+
+  // Allow cross origin requests
+  app.use(cors());
+  app.options('*', cors());
+
+  app.use(express.json());
   app.use('/public', express.static('resources'));
 
   /* Application */
   const router = express.Router();
   router.get('/resources', (req, res) => {
-    res.json({resources});
+    res.json({ resources });
   });
 
   router.get('/students', (req, res) => {
-    res.json({students})
+    res.json({ students })
   });
 
 
@@ -41,8 +46,8 @@ const run = async () => {
     if (!req.body.resources) messages.push("Please add a least 1 resource for the assignment")
     if (!req.body.students) messages.push("Please provide a list of students assigned to the task")
 
-    if (messages.length > 0) return res.status(400).json({messages});
-    return res.status(201).json({message: "Accepted assignment response successfully"});
+    if (messages.length > 0) return res.status(400).json({ messages });
+    return res.status(201).json({ message: "Accepted assignment response successfully" });
   })
 
   app.use('/', router);
