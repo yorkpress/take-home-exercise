@@ -26,4 +26,8 @@ const CardContainer = styled.div<CardProps>`
   align-text: ${(props) => (props.centerText ? "center" : undefined)};
   cursor: ${(props) => (props.clickable ? "pointer" : "auto")};
   margin: ${(props) => (props.m ? props.m : undefined)};
+  transition: all 0.3s;
+  :hover {
+    box-shadow: 6px 6px 14px 7px rgba(164, 160, 160, 0.75);
+  }
 `;

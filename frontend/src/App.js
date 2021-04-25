@@ -1,11 +1,10 @@
-import { TextCard } from "Molecules";
+import { DashboradPage } from "Pages";
 import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <TextCard text="Hello" />
-      <TextCard text="Hello 1" />
+      <DashboradPage />
     </div>
   );
 }

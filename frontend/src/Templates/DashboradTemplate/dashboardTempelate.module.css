@@ -1,0 +1,13 @@
+.mainSection {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  height: 100%;
+  padding: 2%;
+}
+
+.optionsSetion {
+  display: flex;
+  flex-direction: row;
+  margin: 2%;
+}
