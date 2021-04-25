@@ -1,7 +1,0 @@
-{
-  "dependencies": {
-    "@dicebear/avatars": "^4.6.3",
-    "@dicebear/avatars-avataaars-sprites": "^4.6.3",
-    "@dicebear/avatars-initials-sprites": "^4.6.3"
-  }
-}

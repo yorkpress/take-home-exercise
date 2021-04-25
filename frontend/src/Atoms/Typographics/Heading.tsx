@@ -13,8 +13,9 @@ enum sizeOptions {
 interface HeadingProps {
   text: string;
   bold?: string | number;
-  size?: sizeOptions;
+  size?: sizeOptions | string;
   m?: string;
+  color?: string;
 }
 
 export const Heading: FC<HeadingProps> = (props) => {

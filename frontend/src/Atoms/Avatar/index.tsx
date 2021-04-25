@@ -8,6 +8,7 @@ interface AvatarProps {
   seed: string;
   width: number;
   height: number;
+  ml?: string;
 }
 
 export const Avatar: FC<AvatarProps> = (props) => {
@@ -24,5 +25,11 @@ export const Avatar: FC<AvatarProps> = (props) => {
     return Svg;
   }, [type, seed, width, height]);
 
-  return <img src={`data:image/svg+xml;utf8,${getAvatar()}`} alt="" />;
+  return (
+    <img
+      src={`data:image/svg+xml;utf8,${getAvatar()}`}
+      alt=""
+      style={{ marginLeft: props.ml ? props.ml : undefined }}
+    />
+  );
 };
