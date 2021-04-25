@@ -1,5 +1,5 @@
 import { FC } from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 enum sizeOptions {
   "small",
@@ -16,10 +16,16 @@ interface HeadingProps {
   size?: sizeOptions | string;
   m?: string;
   color?: string;
+  ellipsis?: boolean;
+  width?: string;
 }
 
 export const Heading: FC<HeadingProps> = (props) => {
-  return <P {...props}>{props.text}</P>;
+  return (
+    <P {...props} title={props.text}>
+      {props.text}
+    </P>
+  );
 };
 
 const P = styled.p<HeadingProps>`
@@ -27,4 +33,14 @@ const P = styled.p<HeadingProps>`
     font-weight ${(props) => (props.bold ? props.bold : "400")};
     font-size: ${(props) => (props.size ? props.size : "x-large")};
     margin: ${(props) => (props.m ? props.m : undefined)};
+    width: ${(props) => props.width};
+    ${(props) =>
+      props.ellipsis
+        ? css`
+            display: inline-block;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+          `
+        : undefined}
 `;

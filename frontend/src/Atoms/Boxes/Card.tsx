@@ -27,7 +27,7 @@ const CardContainer = styled.div<CardProps>`
   cursor: ${(props) => (props.clickable ? "pointer" : "auto")};
   margin: ${(props) => (props.m ? props.m : undefined)};
   padding: ${(props) => (props.p ? props.p : undefined)};
-  flex-wrap: ${(props) => (props.wrap ? "wrap" : undefined)};
+  flex-wrap: ${(props) => (props.isWrap ? "wrap" : undefined)};
   transition: all 0.3s;
   :hover {
     box-shadow: 6px 6px 14px 7px rgba(164, 160, 160, 0.75);

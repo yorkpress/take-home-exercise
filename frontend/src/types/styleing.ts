@@ -8,5 +8,5 @@ export interface IDivStyle {
     clickable?: boolean;
     m?: string;
     p?: string;
-    wrap?: boolean
+    isWrap?: boolean
 }

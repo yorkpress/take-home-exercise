@@ -1,0 +1,21 @@
+.mainSection {
+  display: flex;
+  flex-direction: row;
+  padding: 8% 6%;
+}
+
+.studentBookSection {
+  display: flex;
+  flex-direction: column;
+  margin-top: 4vh;
+}
+
+.assignBtn {
+  background-color: #ffdc5d;
+  font-size: large;
+  border: none;
+  margin: auto 2vw;
+  padding: 0.5vw 1vw;
+  transform: translateY(1vh);
+  cursor: pointer;
+}

@@ -1,15 +1,31 @@
 import { Avatar } from "Atoms";
 import { Heading } from "Atoms/Typographics";
-import { FC } from "react";
+import { FC, MouseEventHandler } from "react";
 import styled from "styled-components";
+import { colors } from "styleGuide/colors";
 import { IStudent } from "types";
 
-export const StudentRow: FC<IStudent> = (props) => {
+interface StudentRowProps extends IStudent {
+  onClick?: MouseEventHandler;
+}
+
+export const StudentRow: FC<StudentRowProps> = (props) => {
   return (
-    <Row>
+    <Row onClick={props.onClick}>
       <Avatar width={50} height={50} type="img" seed={props.avatar} />
-      <Heading text={`${props.firstname} ${props.lastname}`} size="1.3em" />
-      <Heading text={props.email} color="#039dfc" size="1.3em" />
+      <Heading
+        text={`${props.firstname} ${props.lastname}`}
+        size="1.3em"
+        width="30%"
+        ellipsis
+      />
+      <Heading
+        text={props.email}
+        color={colors.blue}
+        size="1.3em"
+        ellipsis
+        width="40%"
+      />
       <Avatar width={50} height={50} type="text" seed={props.grade} />
     </Row>
   );

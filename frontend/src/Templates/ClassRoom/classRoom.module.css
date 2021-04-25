@@ -12,3 +12,15 @@
   flex-wrap: wrap;
   width: 100%;
 }
+
+.assignBtn {
+  margin-left: auto;
+  width: 15vw;
+  height: 8vh;
+  border: none;
+  color: black;
+  background-color: #ffdc5d;
+  font-size: large;
+  font-weight: bold;
+  cursor: pointer;
+}

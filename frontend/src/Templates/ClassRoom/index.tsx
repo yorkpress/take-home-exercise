@@ -4,6 +4,31 @@ import { StudentRow } from "Molecules";
 import { FC } from "react";
 import styles from "./classRoom.module.css";
 
+interface ClassRoomTemplateProps {
+  navToStudent: (studentId: string) => void;
+}
+
+export const ClassRoomTemplate: FC<ClassRoomTemplateProps> = (props) => {
+  return (
+    <div className={styles.mainSection}>
+      <Heading text="Math Classroom" bold="600" />
+      <Card row isWrap p="4vh 0 8vh 0" m="5vh 0">
+        {students.map((student) => {
+          return (
+            <StudentRow
+              key={student.id}
+              {...student}
+              onClick={() => props.navToStudent(student.id)}
+            />
+          );
+        })}
+      </Card>
+
+      <button className={styles.assignBtn}>Assign homework</button>
+    </div>
+  );
+};
+
 const students = [
   {
     id: "5bd9e9fbecef8d003e003001",
@@ -60,16 +85,3 @@ const students = [
     avatar: "chocolate",
   },
 ];
-
-export const ClassRoomTemplate: FC = () => {
-  return (
-    <div className={styles.mainSection}>
-      <Heading text="Math Classroom" bold="600" />
-      <Card row wrap p="4vh 0 8vh 0" m="5vh 0">
-        {students.map((student) => {
-          return <StudentRow {...student} />;
-        })}
-      </Card>
-    </div>
-  );
-};

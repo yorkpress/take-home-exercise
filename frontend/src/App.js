@@ -1,4 +1,4 @@
-import { DashboradPage, ClassRoomPage } from "Pages";
+import { DashboradPage, ClassRoomPage, StudentPage } from "Pages";
 import { Switch, Route } from "react-router-dom";
 import "./App.css";
 
@@ -8,6 +8,9 @@ function App() {
       <Switch>
         <Route path="/classroom">
           <ClassRoomPage />
+        </Route>
+        <Route path="/student/:id">
+          <StudentPage />
         </Route>
         <Route path="/">
           <DashboradPage />
