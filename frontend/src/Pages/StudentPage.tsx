@@ -1,16 +1,15 @@
 import { FC } from "react";
+import { useLocation } from "react-router";
 import { StudentTemplate } from "Templates";
+import { IStudent } from "types";
 
-const student = {
-  id: "5bd9e9fbecef8d003e003006",
-  grade: "K1",
-  firstname: "Student",
-  lastname: "Invited",
-  email: "student-invited@york-e.com",
-  schoolId: "schYpEN01",
-  avatar: "chocolate",
-};
+interface LocationState {
+  student: IStudent;
+}
 
 export const StudentPage: FC = () => {
+  const location = useLocation<LocationState>();
+  const student = location.state.student;
+
   return <StudentTemplate student={student} assignedBook="GOOD BOOK" />;
 };

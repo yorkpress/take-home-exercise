@@ -9,8 +9,8 @@ export const ClassRoomPage: FC = () => {
   const { APIClient } = useContext(Contexts.API);
   const [students, setStudents] = useState<IStudent[]>([]);
 
-  function navToStudent(studentId: string) {
-    history.push(`/student/${studentId}`);
+  function navToStudent(student: IStudent) {
+    history.push({ pathname: `/student/${student.id}`, state: { student } });
   }
 
   const getStudents = useCallback(async () => {

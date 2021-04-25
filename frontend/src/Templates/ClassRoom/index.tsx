@@ -6,7 +6,7 @@ import { IStudent } from "types";
 import styles from "./classRoom.module.css";
 
 interface ClassRoomTemplateProps {
-  navToStudent: (studentId: string) => void;
+  navToStudent: (student: IStudent) => void;
   students: IStudent[];
 }
 
@@ -20,7 +20,7 @@ export const ClassRoomTemplate: FC<ClassRoomTemplateProps> = (props) => {
             <StudentRow
               key={student.id}
               {...student}
-              onClick={() => props.navToStudent(student.id)}
+              onClick={() => props.navToStudent(student)}
             />
           );
         })}

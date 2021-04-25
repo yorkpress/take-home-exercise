@@ -6,7 +6,7 @@ import { IStudent } from "types";
 import styles from "./studentTemplate.module.css";
 
 interface StudentTemplateProps {
-  student: IStudent | null;
+  student?: IStudent;
   assignedBook?: string;
 }
 
