@@ -2,11 +2,11 @@ import { createContext, FC } from "react";
 import { APIClient, IClient } from "./Client";
 
 interface IAPIContext {
-  Client: IClient;
+  APIClient: IClient;
 }
 
 const APIContextInitialValue = {
-  Client: APIClient,
+  APIClient: APIClient,
 };
 
 export const APIContext = createContext<IAPIContext>(APIContextInitialValue);
