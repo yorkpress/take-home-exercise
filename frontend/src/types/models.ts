@@ -11,3 +11,9 @@ export interface IStudent {
 export interface IHomewrok {
     name: string
 }
+
+export interface IResource {
+    id: string
+    path: string
+    type: "audio" | "book"
+}

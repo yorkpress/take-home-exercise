@@ -1,13 +1,19 @@
 import { Avatar } from "Atoms";
 import { Heading } from "Atoms/Typographics";
+import { TextRow } from "Molecules/TextRow";
+import { AssignModal } from "Organisms";
 import { FC } from "react";
 import { colors } from "styleGuide/colors";
-import { IStudent } from "types";
+import { IResource, IStudent } from "types";
 import styles from "./studentTemplate.module.css";
 
 interface StudentTemplateProps {
   student?: IStudent;
   assignedBook?: string;
+  showModal: () => void;
+  isModalOpen: boolean;
+  assign: (bookName: string) => void;
+  books: IResource[];
 }
 
 export const StudentTemplate: FC<StudentTemplateProps> = (props) => {
@@ -34,9 +40,28 @@ export const StudentTemplate: FC<StudentTemplateProps> = (props) => {
               />
             )}
           </div>
-          <button className={styles.assignBtn}> Assign book </button>
+          <button
+            className={styles.assignBtn}
+            onClick={() => props.showModal()}
+          >
+            Assign book
+          </button>
         </div>
       )}
+
+      <AssignModal
+        isOpen={props.isModalOpen}
+        onAssign={props.assign}
+        label="Assign book to student"
+        rows={props.books.map((book) => {
+          const bookName = book.path.split("/").pop();
+          return {
+            Component: <TextRow text={bookName ?? "Book Name"} />,
+            value: bookName,
+          };
+        })}
+      />
+
       {!student && (
         <Heading text={"Student Not Found!"} bold="600" size="3em" />
       )}
