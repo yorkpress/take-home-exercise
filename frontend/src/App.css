@@ -2,8 +2,9 @@
   background-color: red;
   font-size: small;
   /* size: ; */
-  justify-content: center;
+  justify-content: space-around;
   cursor: auto;
+  flex-wrap: wrap;
 }
 .App {
   width: 100vw;
