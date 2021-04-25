@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import Modal from "react-modal";
 import { colors } from "styleGuide/colors";
 import styles from "./AssignModal.module.css";
@@ -44,6 +44,13 @@ export const AssignModal: FC<AssignModalProps> = (props) => {
     onAssign(selectedValue);
   }
 
+  useEffect(() => {
+    if (!isOpen) {
+      setSelectedValue(undefined);
+      setSelectedIndex(undefined);
+    }
+  }, [isOpen]);
+
   return (
     <Modal isOpen={isOpen} contentLabel={label} style={customeStyle}>
       {rows.map((row, index) => {
@@ -61,7 +68,11 @@ export const AssignModal: FC<AssignModalProps> = (props) => {
           </div>
         );
       })}
-      <button className={styles.assignBtn} onClick={handleAssign}>
+      <button
+        className={styles.assignBtn}
+        onClick={handleAssign}
+        disabled={!selectedValue}
+      >
         Assign
       </button>
     </Modal>

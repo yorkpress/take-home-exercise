@@ -7,4 +7,10 @@
   bottom: 2vh;
   padding: 1vw 1vw;
   cursor: pointer;
+  transition: all 0.3s;
+}
+
+.assignBtn:disabled {
+  background-color: #9b9b9b;
+  cursor: not-allowed;
 }

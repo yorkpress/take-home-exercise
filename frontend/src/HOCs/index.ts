@@ -1,10 +1,12 @@
-import { APIContext, APIProvider } from "./Contexts"
+import { APIContext, APIProvider, AssigningContext, AssigingProvider } from "./Contexts"
 
 const Contexts = {
-    API: APIContext
+    API: APIContext,
+    Assigning: AssigningContext
 }
 const Providers = {
-    API: APIProvider
+    API: APIProvider,
+    Assigning: AssigingProvider
 }
 
 export {

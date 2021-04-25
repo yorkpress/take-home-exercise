@@ -7,6 +7,7 @@ import { Contexts } from "HOCs";
 export const ClassRoomPage: FC = () => {
   const history = useHistory();
   const { APIClient } = useContext(Contexts.API);
+  const { assingHomework, assignedHomework } = useContext(Contexts.Assigning);
   const [students, setStudents] = useState<IStudent[]>([]);
   const [homeworks, setHomeworks] = useState<IHomewrok[]>([]);
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
@@ -16,7 +17,7 @@ export const ClassRoomPage: FC = () => {
   }
 
   function onAssign(homeworkName: string) {
-    console.log(homeworkName);
+    assingHomework(homeworkName);
     setIsModalOpen(false);
   }
 
@@ -46,6 +47,7 @@ export const ClassRoomPage: FC = () => {
       onAssign={onAssign}
       showModal={() => setIsModalOpen(true)}
       isModalOpen={isModalOpen}
+      assignedHomework={assignedHomework}
     />
   );
 };

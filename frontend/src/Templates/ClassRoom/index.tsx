@@ -4,6 +4,7 @@ import { StudentRow } from "Molecules";
 import { TextRow } from "Molecules/TextRow";
 import { AssignModal } from "Organisms";
 import { FC } from "react";
+import { colors } from "styleGuide/colors";
 import { IHomewrok, IStudent } from "types";
 import styles from "./classRoom.module.css";
 
@@ -14,12 +15,21 @@ interface ClassRoomTemplateProps {
   onAssign: (homeworkName: string) => void;
   showModal: () => void;
   isModalOpen: boolean;
+  assignedHomework?: string;
 }
 
 export const ClassRoomTemplate: FC<ClassRoomTemplateProps> = (props) => {
   return (
     <div className={styles.mainSection}>
       <Heading text="Math Classroom" bold="600" />
+      {props.assignedHomework && (
+        <Heading
+          text={`${props.assignedHomework} assigned to this class`}
+          bold="200"
+          color={colors.blue}
+          m="0"
+        />
+      )}
       <Card row isWrap p="4vh 0 8vh 0" m="5vh 0">
         {props.students.map((student) => {
           return (
