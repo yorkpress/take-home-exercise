@@ -2,4 +2,6 @@
   background-color: red;
   font-size: small;
   /* size: ; */
+  justify-content: center;
+  cursor: auto;
 }

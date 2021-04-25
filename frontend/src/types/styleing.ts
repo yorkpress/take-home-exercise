@@ -6,4 +6,5 @@ export interface IDivStyle {
     h?: string;
     centerText?: boolean;
     clickable?: boolean;
+    m?: string;
 }

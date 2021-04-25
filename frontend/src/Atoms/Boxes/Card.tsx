@@ -1,17 +1,22 @@
-import React, { FC } from "react";
+import React, { FC, MouseEventHandler } from "react";
 import styled from "styled-components";
 import { IDivStyle } from "types";
 
 interface CardProps extends IDivStyle {
   children: React.ReactNode;
+  onClick?: MouseEventHandler;
 }
 
 export const Card: FC<CardProps> = (props) => {
-  return <CardContainer {...props}>{props.children}</CardContainer>;
+  return (
+    <CardContainer {...props} onClick={props.onClick}>
+      {props.children}
+    </CardContainer>
+  );
 };
 
 const CardContainer = styled.div<CardProps>`
-  box-shadow: 5px 7px 6px -1px rgba(99, 99, 99, 0.6);
+  box-shadow: 4px 4px 12px 5px rgba(164, 160, 160, 0.75);
   display: flex;
   flex-direction: ${(props) => (props.row ? "row" : "column")};
   justify-content: ${(props) => (props.aCenter ? "center" : undefined)};
@@ -20,4 +25,5 @@ const CardContainer = styled.div<CardProps>`
   height: ${(props) => (props.h ? props.h : undefined)};
   align-text: ${(props) => (props.centerText ? "center" : undefined)};
   cursor: ${(props) => (props.clickable ? "pointer" : "auto")};
+  margin: ${(props) => (props.m ? props.m : undefined)};
 `;

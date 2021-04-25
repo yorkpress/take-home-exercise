@@ -1,1 +1,1 @@
-export { }
+export { TextCard } from "./TextCard"
