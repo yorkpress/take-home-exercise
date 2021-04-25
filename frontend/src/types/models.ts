@@ -7,3 +7,7 @@ export interface IStudent {
     schoolId: string,
     avatar: string,
 }
+
+export interface IHomewrok {
+    name: string
+}
