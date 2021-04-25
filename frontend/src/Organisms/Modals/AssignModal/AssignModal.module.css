@@ -1,0 +1,10 @@
+.assignBtn {
+  position: fixed;
+  background-color: #ffdc5d;
+  font-size: large;
+  border: none;
+  right: 1vw;
+  bottom: 2vh;
+  padding: 1vw 1vw;
+  cursor: pointer;
+}

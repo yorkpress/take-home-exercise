@@ -1,10 +1,12 @@
 .test {
-  background-color: red;
+  background-color: rgb(255, 255, 255, 0.5);
   font-size: small;
   /* size: ; */
-  justify-content: space-around;
+  justify-content: center;
+  align-items: center;
   cursor: auto;
   flex-wrap: wrap;
+  text-align: center;
 }
 .App {
   width: 100vw;

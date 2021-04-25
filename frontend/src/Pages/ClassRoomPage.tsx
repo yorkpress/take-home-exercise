@@ -1,16 +1,23 @@
 import { FC, useCallback, useContext, useEffect, useState } from "react";
 import { useHistory } from "react-router";
 import { ClassRoomTemplate } from "Templates";
-import { IStudent } from "types";
+import { IHomewrok, IStudent } from "types";
 import { Contexts } from "HOCs";
 
 export const ClassRoomPage: FC = () => {
   const history = useHistory();
   const { APIClient } = useContext(Contexts.API);
   const [students, setStudents] = useState<IStudent[]>([]);
+  const [homeworks, setHomeworks] = useState<IHomewrok[]>([]);
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
 
   function navToStudent(student: IStudent) {
     history.push({ pathname: `/student/${student.id}`, state: { student } });
+  }
+
+  function onAssign(homeworkName: string) {
+    console.log(homeworkName);
+    setIsModalOpen(false);
   }
 
   const getStudents = useCallback(async () => {
@@ -18,9 +25,27 @@ export const ClassRoomPage: FC = () => {
     setStudents(students);
   }, [APIClient.Student]);
 
+  const getHomeworks = useCallback(() => {
+    const homeworks = APIClient.Homework.list();
+    setHomeworks(homeworks);
+  }, [APIClient.Homework]);
+
   useEffect(() => {
     getStudents();
   }, [getStudents]);
 
-  return <ClassRoomTemplate navToStudent={navToStudent} students={students} />;
+  useEffect(() => {
+    getHomeworks();
+  }, [getHomeworks]);
+
+  return (
+    <ClassRoomTemplate
+      navToStudent={navToStudent}
+      students={students}
+      homeworks={homeworks}
+      onAssign={onAssign}
+      showModal={() => setIsModalOpen(true)}
+      isModalOpen={isModalOpen}
+    />
+  );
 };
