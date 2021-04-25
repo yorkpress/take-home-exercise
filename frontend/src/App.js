@@ -1,10 +1,12 @@
 import "./App.css";
-import { Typographics } from "./Atoms";
+import { Typographics, Boxes } from "./Atoms";
 
 function App() {
   return (
     <div className="App">
-      <Typographics.Heading text="Hello" />
+      <Boxes.Card w="20vw" h="20vh" aCenter clickable>
+        <Typographics.Heading text="Hello" />
+      </Boxes.Card>
     </div>
   );
 }

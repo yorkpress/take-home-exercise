@@ -1,0 +1,1 @@
+export type { IDivStyle } from "./styleing"
