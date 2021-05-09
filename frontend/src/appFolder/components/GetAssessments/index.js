@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { Card } from "antd";
 import { baseUrl } from '../../apis/config';
 
@@ -32,9 +31,9 @@ export const GetLinks = ({ resources, rsrcs, className }) => (
                 texts = rsrc.path.split('/');
 
             return (
-                <Link key={r} to={`${baseUrl}/${texts}`} style={{ margin: "0px 10px" }}>
+                <a target="_blank" key={r} href={`${baseUrl}${rsrc.path}`} style={{ margin: "0px 10px" }} >
                     {texts[texts.length - 1]}
-                </Link>
+                </a>
             )
         })}
     </div>
