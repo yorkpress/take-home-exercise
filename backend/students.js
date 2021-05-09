@@ -10,11 +10,11 @@ module.exports = [
     },
     {
       "id": "5bd9e9fbecef8d003e003002",
-      "grade": "K1",
+      "grade": "K2",
       "firstname": "Student",
       "lastname": "Two",
       "email": "student-two@york-e.com",
-      "schoolId": "schYpEN01",
+      "schoolId": "schYpEN02",
       "avatar": "ladybird"
     },
     {
@@ -37,20 +37,20 @@ module.exports = [
     },
     {
       "id": "5bd9e9fbecef8d003e003005",
-      "grade": "K1",
+      "grade": "K3",
       "firstname": "Student",
       "lastname": "Five",
       "email": "student-five@york-e.com",
-      "schoolId": "schYpEN01",
+      "schoolId": "schYpEN03",
       "avatar": "tomato"
     },
     {
       "id": "5bd9e9fbecef8d003e003006",
-      "grade": "K1",
+      "grade": "K3",
       "firstname": "Student",
       "lastname": "Invited",
       "email": "student-invited@york-e.com",
-      "schoolId": "schYpEN01",
+      "schoolId": "schYpEN03",
       "avatar": "chocolate"
     }
 ];

@@ -1,6 +1,7 @@
 const express = require('express');
 const students = require('./students');
 const resources = require('./resources');
+const cors = require('cors');
 
 const {
   PORT = 3000,
