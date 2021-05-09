@@ -23,8 +23,8 @@ const GetAssessments = ({ assessments = [], rsrcs = [] }) => (
 );
 
 
-const GetLinks = ({ resources, rsrcs }) => (
-    <div>
+export const GetLinks = ({ resources, rsrcs, className }) => (
+    <div className={className}>
         Files :
         {resources.map(r => {
             let
@@ -45,12 +45,13 @@ const GetQuestions = ({ questions }) => (
     <div>
         {
             questions.map((q, i) => (
-                <div key={i}>
-                    <div className="text-mid">
-                        Questions {i + 1} : {q.question}
+                <div key={i} className="cont4">
+                    <div>
+                        <h3>Questions {i + 1} :</h3>
+                        <div className="shft">{q.question}</div>
                     </div>
                     <div>
-                        <div className="text-mid">Answers : </div>
+                        <h3>Answers : </h3>
                         <div>
                             {
                                 q.answers.map((a, i) => (
@@ -71,5 +72,5 @@ const GetQuestions = ({ questions }) => (
     </div>
 )
 
-
+GetAssessments.GetLinks=GetLinks;
 export default GetAssessments;

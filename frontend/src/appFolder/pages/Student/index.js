@@ -1,5 +1,4 @@
 import { useContext, useEffect, useState } from 'react';
-import Collapse from '../../components/Collapse';
 import { useParams } from 'react-router-dom';
 import { AppContext } from '../../store';
 import Std from '../../components/Student';

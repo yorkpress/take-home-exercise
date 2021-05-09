@@ -67,7 +67,7 @@ const Classroom = () => {
                                             style={{ width: "100%" }}
                                             to={`/student/${item.id}`}
                                         >
-                                            <Student {...item} />
+                                            <Student {...item} cardOnly={true} />
                                         </Link>
                                     </List.Item>
                                 )}

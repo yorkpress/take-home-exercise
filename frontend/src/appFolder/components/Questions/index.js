@@ -19,12 +19,16 @@ const Questions = ({ onQuestions }) => {
         <div>
             <Button
                 style={{ marginBottom: "20px" }}
-                onClick={() => setQuestions([{}, ...questions])}
+                onClick={() => setQuestions([...questions, {}])}
             >Add Question</Button>
 
             {
                 questions.map((q, i) => (
-                    <Question key={i} questionNum={i} sendQuestion={sendQuestion} />
+                    <Question
+                        key={i}
+                        questionNum={i}
+                        sendQuestion={sendQuestion}
+                    />
                 ))
             }
         </div>
@@ -40,14 +44,14 @@ const Question = ({ questionNum, sendQuestion }) => {
 
     const onAddOption = () => setAnswers([
         ...answers,
-        { ind: answers.length, text: "", correct: false }
+        {text: "", correct: false }
     ]);
 
     const onChangeAnswer = (ind, answer) => {
         let newAnswers = answers
             .map((a, i) => {
                 if (i == ind)
-                    return answer;
+                    return {...a, ...answer, ind};
                 else if (answer.correct)
                     return { ...a, correct: false }
                 else return a;
@@ -63,7 +67,7 @@ const Question = ({ questionNum, sendQuestion }) => {
 
 
     return (
-        <div style={{marginBottom: "25px"}}>
+        <div className="cont4">
             <h3>question {questionNum + 1}</h3>
             <TextArea
                 rows={3}
@@ -84,6 +88,7 @@ const Question = ({ questionNum, sendQuestion }) => {
 
 
 const Answer = ({ ind, text, correct, onChange }) => {
+
     const onTyping = (e) => onChange(ind,
         { text: e.target.value, correct }
     );

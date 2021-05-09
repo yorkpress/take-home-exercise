@@ -8,7 +8,7 @@ const Assignment = ({ onConfirm, ...rest }) => {
     const
         { store } = useContext(AppContext),
         [ass, setAss] = useState({ name: "", questions: [] });
-
+        
     const
         append = (data) => setAss({ ...ass, ...data }),
         
@@ -32,7 +32,7 @@ const Assignment = ({ onConfirm, ...rest }) => {
             </BLockTitlBody>
             <SelectMultiCstm
                 onSelect={onSelect}
-                placeholder="add resourses"
+                placeholder="add media"
                 style={{ width: "50%", margin: "15px" }}
                 data={store.resources.map(r => {
                     let texts = r.path.split('/')

@@ -12,6 +12,7 @@ export const initState = {
     resources: [],
     classrooms: [],
     assessments: [],
+    studentWorks: [],
     pageTitle: "",
 };
 

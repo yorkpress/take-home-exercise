@@ -5,7 +5,7 @@ const BLockTitlBody = ({ title, ...rest }) => {
 
     return (
         <div>
-            <h3 className="header1">{title}</h3>
+            {!title?null: <h3 className="header1">{title}</h3>}
             <div className="cont1">
                 {rest.children}
             </div>

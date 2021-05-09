@@ -54,3 +54,16 @@ html, body, .App, #root {
 .shft {
   margin: 3px 20px;
 }
+
+.cont3 {
+  margin: 10px;
+  display: block;
+}
+
+.cont4 {
+  margin: 8px 0px;
+  background-color: #f3f3f3;
+  padding: 10px;
+  border-radius: 5px;
+  
+}
